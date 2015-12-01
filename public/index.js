@@ -1,4 +1,4 @@
-var app = angular.module('myApp',['ng-admin']);
+var app = angular.module('admin',['ng-admin']);
 
 app.config(['RestangularProvider', function (RestangularProvider) {
 
