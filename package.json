@@ -1,0 +1,30 @@
+{
+  "name": "jsonserver",
+  "version": "0.0.0",
+  "description": "REST backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo `date`"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micosuave/jsonserver.git"
+  },
+  "keywords": [
+    "json",
+    "REST",
+    "backend"
+  ],
+  "author": "michaelmcosta@me.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/micosuave/jsonserver/issues"
+  },
+  "homepage": "https://github.com/micosuave/jsonserver#readme",
+  "dependencies": {
+    "json-server": "^0.8.3"
+  },
+  "devDependencies": {
+    "ng-admin": "^0.9.1"
+  }
+}

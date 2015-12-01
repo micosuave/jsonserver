@@ -1,0 +1,8 @@
+**/node_modules/**
+node_modules/.bin/json-server
+
+node_modules/.bin/latest-version
+
+node_modules/lodash/internal/createCtorWrapper.js
+
+node_modules/lodash/internal/createDefaults.js
