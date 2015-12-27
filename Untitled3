@@ -1,0 +1,31 @@
+'use strict';
+
+module.exports = function(inputfile) {
+
+return unzip(inputfile);
+
+ function unzip (inputfile){
+console.log(inputfile);
+var path = require('path');
+var StreamZip = require('node-stream-zip');
+var zip = new StreamZip({
+	file: inputfile.toString(),
+	storeEntries: true
+});
+
+zip.on('error', function(err){console.log(err)});
+zip.on('ready', function(){
+	console.log('Entries read: ' + zip.entriesCount);
+
+	zip.extract(null, './documents/',  function(err,count){
+		console.log('Extracted ' + count + ' entries');
+	});
+});
+zip.on('extract', function(entry, file){
+	console.log('Extracted ' + entry.name + ' to ' + file);
+});
+zip.on('entry', function(entry){
+	console.log('Read entry ', entry.name);
+});
+}
+}

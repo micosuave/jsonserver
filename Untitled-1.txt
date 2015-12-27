@@ -1,0 +1,12 @@
+var fs = require('fs');
+
+uploaddir/inputdir = /PATH
+
+USERDIR = /Second/PATH
+
+PUBLICDIR = /third/PATH;
+
+step one- watch uploaddir? or spawn on upload?
+
+step 2 - read inputdir > make arrayqueue
+		

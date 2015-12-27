@@ -1,0 +1,21 @@
+var app = angular.module('fileUpload', ['ngFileUpload', 'ngImgCrop']);
+
+app.controller('MyCtrl', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
+    $scope.upload = function (dataUrl) {
+        Upload.upload({
+            url: 'http://do.lexlab.io:3000/api/pdf/',
+            data: {
+                file: Upload.dataUrltoBlob(dataUrl)
+            },
+        }).then(function (response) {
+            $timeout(function () {
+                $scope.result = response.data;
+            });
+        }, function (response) {
+            if (response.status > 0) $scope.errorMsg = response.status
+                + ': ' + response.data;
+        }, function (evt) {
+            $scope.progress = parseInt(100.0 * evt.loaded / evt.total);
+        });
+    }
+}]);
